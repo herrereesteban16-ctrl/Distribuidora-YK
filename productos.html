@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Consulta el catálogo de productos de Distribuidora Y&K y solicita información comercial."
+    >
+
+    <title>Productos | Distribuidora Y&amp;K</title>
+
+    <link rel="stylesheet" href="./css/productos.css">
+</head>
+
+<body>
+
+    <!-- Encabezado del catálogo -->
+    <header class="catalog-header">
+
+        <div class="catalog-header__container">
+
+            <!-- Logo y nombre de la empresa -->
+            <a
+                class="catalog-header__brand"
+                href="./index.html"
+                aria-label="Volver al inicio"
+            >
+                <img
+                    class="catalog-header__logo"
+                    src="./img/logo-yk.png"
+                    alt="Logo de Distribuidora Y&K"
+                >
+
+                <span>Distribuidora Y&amp;K</span>
+            </a>
+
+            <!-- Navegación -->
+            <nav
+                class="catalog-header__navigation"
+                aria-label="Navegación principal"
+            >
+                <a href="./index.html">
+                    Inicio
+                </a>
+
+                <a
+                    class="active"
+                    href="./productos.html"
+                    aria-current="page"
+                >
+                    Productos
+                </a>
+
+                <a
+                    class="catalog-header__contact"
+                    href="./contacto.html"
+                >
+                    Contáctanos
+                </a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Presentación del catálogo -->
+        <section class="catalog-hero">
+
+            <div class="catalog-hero__container">
+
+                <p class="catalog-hero__label">
+                    Catálogo comercial
+                </p>
+
+                <h1>
+                    Encuentra el producto
+                    <span>que necesitas</span>
+                </h1>
+
+                <p class="catalog-hero__description">
+                    Explora nuestro catálogo y comunícate con el asesor
+                    para confirmar disponibilidad, presentación y
+                    condiciones comerciales.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Catálogo de productos -->
+        <section class="catalog">
+
+            <div class="catalog__container">
+
+                <!-- Buscador y contador -->
+                <div class="catalog__toolbar">
+
+                    <label
+                        class="search-box"
+                        for="product-search"
+                    >
+                        <span
+                            class="search-box__icon"
+                            aria-hidden="true"
+                        >
+                            &#128269;
+                        </span>
+
+                        <input
+                            type="search"
+                            id="product-search"
+                            placeholder="Buscar por nombre..."
+                            autocomplete="off"
+                        >
+                    </label>
+
+                    <p
+                        class="catalog__counter"
+                        id="product-counter"
+                        aria-live="polite"
+                    >
+                        Cargando productos...
+                    </p>
+
+                </div>
+
+                <!-- JavaScript insertará aquí las tarjetas -->
+
+                <div
+                    class="products-grid"
+                    id="products-grid"
+                ></div>
+
+                <div
+                    class="products-grid"
+                    id="products-grid"
+                ></div>
+                
+                 <!-- Control para mostrar más productos -->
+                <div class="catalog__load-more">
+
+                    <button
+                        class="load-more-button"
+                        id="load-more-button"
+                        type="button"
+                    >
+                        Cargar más productos
+                    </button>
+                    </div>
+
+</div>
+
+
+</div>
+
+                <!-- Mensaje cuando no hay resultados -->
+                <div
+                    class="catalog-empty"
+                    id="catalog-empty"
+                    hidden
+                >
+                    <div
+                        class="catalog-empty__icon"
+                        aria-hidden="true"
+                    >
+                        ?
+                    </div>
+
+                    <h2>No encontramos ese producto</h2>
+
+                    <p>
+                        Revisa el nombre o comunícate con el asesor
+                        para consultar disponibilidad.
+                    </p>
+
+                    <a
+                        class="catalog-empty__button"
+                        href="./contacto.html"
+                    >
+                        Contactar al asesor
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="catalog-footer">
+
+        <div class="catalog-footer__container">
+
+            <div>
+                <strong>Distribuidora Y&amp;K</strong>
+
+                <p>
+                    Soluciones de Salud con Confianza
+                </p>
+            </div>
+
+            <a href="./contacto.html">
+                Atención comercial
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- Primero cargamos la lista generada desde Excel -->
+    <script src="./js/productos-data.js"></script>
+
+    <!-- Después cargamos el código que genera las tarjetas -->
+    <script src="./js/productos.js"></script>
+
+</body>
+</html>

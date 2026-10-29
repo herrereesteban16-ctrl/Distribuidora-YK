@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Distribuidora Y&K, soluciones de salud con confianza."
+    >
+
+    <title>Distribuidora Y&amp;K | Soluciones de Salud</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Barra principal de navegación -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <!-- Logo y nombre de la empresa -->
+            <a class="navbar__brand" href="#inicio">
+                <img
+                    class="navbar__logo"
+                    src="./img/logo-yk.png"
+                    alt="Logo de Distribuidora Y&K"
+                >
+
+                <span class="navbar__name">
+                    Distribuidora Y&amp;K
+                </span>
+            </a>
+
+            <!-- Botón del menú para celulares -->
+            <button
+                class="navbar__toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menú de navegación"
+                aria-expanded="false"
+                aria-controls="navbar-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Enlaces principales -->
+            <div class="navbar__menu" id="navbar-menu">
+
+                <a class="navbar__link active" href="#inicio">
+                    Inicio
+                </a>
+
+                <a class="navbar__link" href="./productos.html">
+                    Productos
+                </a>
+
+                <a
+                    class="navbar__link navbar__link--contact"
+                    href="./contacto.html"
+                >
+                    Contáctanos
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Portada principal -->
+        <section class="hero" id="inicio">
+
+            <!-- Columna izquierda -->
+            <div class="hero__content">
+
+                <p class="hero__eyebrow">
+                    Innovación, respaldo y bienestar
+                </p>
+
+                <h1 class="hero__title">
+                    Soluciones de salud
+
+                    <span>
+                        en las que puedes confiar
+                    </span>
+                </h1>
+
+                <p class="hero__description">
+                    Distribuimos productos para el cuidado de la salud
+                    con atención responsable, calidad y un servicio
+                    pensado para cada cliente.
+                </p>
+
+                <div class="hero__actions">
+
+                    <a
+                        class="button button--primary"
+                        href="./productos.html"
+                    >
+                        Ver productos
+                    </a>
+
+                    <a
+                        class="button button--secondary"
+                        href="./contacto.html"
+                    >
+                        Solicitar información
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="hero__visual" aria-hidden="true">
+
+                <div class="hero__orb hero__orb--large"></div>
+                <div class="hero__orb hero__orb--small"></div>
+
+                <div class="hero__card">
+
+                    <img
+                        class="hero__logo"
+                        src="./img/logo-yk.png"
+                        alt=""
+                    >
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Conexión con JavaScript -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

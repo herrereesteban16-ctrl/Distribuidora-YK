@@ -1,0 +1,14 @@
+# Excel utilizado para generar el catálogo
+data/
+
+# Herramientas internas de automatización
+tools/
+
+# Configuraciones locales del editor
+.vscode/
+
+# Archivos temporales
+*.tmp
+*.log
+Thumbs.db
+.DS_Store

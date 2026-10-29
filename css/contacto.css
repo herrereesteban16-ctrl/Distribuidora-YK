@@ -1,0 +1,671 @@
+/* ========================================
+   1. VARIABLES DE DISEÑO
+======================================== */
+
+:root {
+    --color-primary: #14aeb9;
+    --color-primary-dark: #0b8794;
+    --color-secondary: #1769aa;
+    --color-deep-blue: #123c73;
+
+    --color-background: #f4fafc;
+    --color-background-alt: #eaf5f8;
+    --color-surface: rgba(255, 255, 255, 0.86);
+
+    --color-text: #12304a;
+    --color-text-muted: #567184;
+    --color-border: rgba(23, 105, 170, 0.14);
+
+    --container-width: 1180px;
+    --transition: 0.3s ease;
+}
+
+
+/* ========================================
+   2. REINICIO GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+
+    background:
+        radial-gradient(
+            circle at 87% 18%,
+            rgba(20, 174, 185, 0.13),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 8% 88%,
+            rgba(23, 105, 170, 0.09),
+            transparent 27%
+        ),
+        linear-gradient(
+            135deg,
+            #fbfefe,
+            var(--color-background)
+        );
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ========================================
+   3. ENCABEZADO
+======================================== */
+
+.contact-header {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    height: 80px;
+
+    border-bottom: 1px solid var(--color-border);
+
+    background-color: rgba(255, 255, 255, 0.84);
+
+    box-shadow:
+        0 8px 35px rgba(18, 60, 115, 0.06);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.contact-header__container {
+    width: min(100% - 40px, var(--container-width));
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--color-deep-blue);
+    font-weight: 800;
+}
+
+.contact-header__logo {
+    width: 52px;
+    height: 52px;
+    padding: 3px;
+
+    object-fit: cover;
+
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 8px 22px rgba(18, 60, 115, 0.08);
+}
+
+.back-link {
+    min-height: 44px;
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    color: var(--color-deep-blue);
+    font-weight: 700;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+}
+
+.back-link:hover {
+    transform: translateX(-3px);
+
+    border-color: rgba(20, 174, 185, 0.3);
+    background-color: #ffffff;
+}
+
+
+/* ========================================
+   4. CONTENIDO PRINCIPAL
+======================================== */
+
+.contact-page {
+    position: relative;
+
+    min-height: calc(100vh - 80px);
+    padding: 70px 0;
+
+    display: grid;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.contact-page__container {
+    position: relative;
+    z-index: 2;
+
+    width: min(100% - 40px, var(--container-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* Elementos circulares decorativos */
+
+.contact-page__decoration {
+    position: absolute;
+
+    border: 1px solid rgba(23, 105, 170, 0.08);
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23, 105, 170, 0.12),
+            rgba(20, 174, 185, 0.25)
+        );
+
+    box-shadow:
+        inset 0 0 50px rgba(255, 255, 255, 0.48);
+}
+
+.contact-page__decoration--one {
+    width: 310px;
+    height: 310px;
+
+    top: 40px;
+    right: -70px;
+}
+
+.contact-page__decoration--two {
+    width: 140px;
+    height: 140px;
+
+    bottom: 30px;
+    left: 4%;
+}
+
+
+/* ========================================
+   5. INTRODUCCIÓN
+======================================== */
+
+.contact-intro__label {
+    margin-bottom: 20px;
+
+    color: var(--color-primary-dark);
+    font-size: 0.83rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-intro h1 {
+    max-width: 680px;
+    margin-bottom: 26px;
+
+    color: var(--color-deep-blue);
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.contact-intro h1 span {
+    display: block;
+    margin-top: 12px;
+
+    color: transparent;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-secondary),
+            var(--color-primary)
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.contact-intro__description {
+    max-width: 620px;
+    margin-bottom: 32px;
+
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.contact-intro__schedule {
+    max-width: 520px;
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    border: 1px solid rgba(20, 174, 185, 0.17);
+    border-radius: 16px;
+
+    background-color: rgba(255, 255, 255, 0.74);
+
+    box-shadow:
+        0 12px 32px rgba(18, 60, 115, 0.06);
+}
+
+.contact-intro__status {
+    flex-shrink: 0;
+
+    width: 11px;
+    height: 11px;
+    margin-top: 5px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    background-color: #20b87a;
+
+    box-shadow:
+        0 0 0 3px rgba(32, 184, 122, 0.14);
+}
+
+.contact-intro__schedule strong,
+.contact-intro__schedule div > span {
+    display: block;
+}
+
+.contact-intro__schedule strong {
+    margin-bottom: 6px;
+    color: var(--color-deep-blue);
+}
+
+.contact-intro__schedule div > span {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   6. TARJETA DEL ASESOR
+======================================== */
+
+.contact-card {
+    position: relative;
+
+    padding: 36px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(238, 249, 251, 0.85)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(18, 60, 115, 0.12),
+        0 10px 35px rgba(20, 174, 185, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+    top: -100px;
+    right: -85px;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(20, 174, 185, 0.16),
+            transparent 70%
+        );
+}
+
+.contact-card__advisor {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.contact-card__avatar {
+    flex-shrink: 0;
+
+    width: 72px;
+    height: 72px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 21px;
+
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-secondary),
+            var(--color-primary)
+        );
+
+    box-shadow:
+        0 14px 30px rgba(20, 174, 185, 0.2);
+}
+
+.contact-card__advisor p {
+    margin-bottom: 5px;
+
+    color: var(--color-primary-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.contact-card__advisor h2 {
+    color: var(--color-deep-blue);
+    font-size: 1.7rem;
+}
+
+.contact-card__text {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 25px;
+
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   7. OPCIONES DE CONTACTO
+======================================== */
+
+.contact-action {
+    position: relative;
+    z-index: 2;
+
+    min-height: 88px;
+    margin-top: 14px;
+    padding: 16px 18px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 15px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+
+    background-color: rgba(255, 255, 255, 0.82);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.contact-action:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(20, 174, 185, 0.35);
+
+    box-shadow:
+        0 16px 38px rgba(18, 60, 115, 0.09);
+}
+
+.contact-action__icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(20, 174, 185, 0.17);
+    border-radius: 15px;
+
+    color: var(--color-primary-dark);
+    font-size: 0.75rem;
+    font-weight: 900;
+
+    background-color: rgba(20, 174, 185, 0.08);
+}
+
+.contact-action__information {
+    min-width: 0;
+}
+
+.contact-action__information strong,
+.contact-action__information small {
+    display: block;
+}
+
+.contact-action__information strong {
+    margin-bottom: 5px;
+    color: var(--color-deep-blue);
+}
+
+.contact-action__information small {
+    overflow-wrap: anywhere;
+
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+}
+
+.contact-action__arrow {
+    color: var(--color-primary-dark);
+    font-size: 1.4rem;
+
+    transition: transform var(--transition);
+}
+
+.contact-action:hover .contact-action__arrow {
+    transform: translateX(5px);
+}
+
+
+/* Diseño especial para WhatsApp */
+
+.contact-action--whatsapp {
+    color: #ffffff;
+    border-color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            #159b68,
+            #20bd78
+        );
+
+    box-shadow:
+        0 15px 35px rgba(21, 155, 104, 0.2);
+}
+
+.contact-action--whatsapp:hover {
+    border-color: transparent;
+
+    box-shadow:
+        0 20px 42px rgba(21, 155, 104, 0.28);
+}
+
+.contact-action--whatsapp .contact-action__icon {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.contact-action--whatsapp strong,
+.contact-action--whatsapp small,
+.contact-action--whatsapp .contact-action__arrow {
+    color: #ffffff;
+}
+
+.contact-action--whatsapp small {
+    opacity: 0.88;
+}
+
+.contact-card__notice {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 20px;
+
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* ========================================
+   8. DISEÑO RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .contact-page {
+        padding: 60px 0 80px;
+    }
+
+    .contact-page__container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-intro {
+        text-align: center;
+    }
+
+    .contact-intro__description,
+    .contact-intro__schedule {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .contact-header {
+        height: 72px;
+    }
+
+    .contact-header__container,
+    .contact-page__container {
+        width: min(100% - 28px, var(--container-width));
+    }
+
+    .contact-header__logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .contact-header__brand span {
+        display: none;
+    }
+
+    .back-link {
+        padding: 0 14px;
+        font-size: 0.88rem;
+    }
+
+    .contact-page {
+        min-height: calc(100vh - 72px);
+        padding: 50px 0 65px;
+    }
+
+    .contact-intro h1 {
+        font-size: clamp(2.7rem, 13vw, 4rem);
+        letter-spacing: -2.5px;
+    }
+
+    .contact-card {
+        padding: 23px;
+        border-radius: 23px;
+    }
+
+    .contact-card__avatar {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+    }
+
+    .contact-card__advisor h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-action {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .contact-action__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+    }
+
+    .contact-action__arrow {
+        display: none;
+    }
+}
