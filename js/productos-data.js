@@ -670,7 +670,7 @@ const productos = [
     {
         "nombre": "METFORMINA 850MG",
         "archivoBase": "METFORMINA__850MG",
-        "precio": 63250
+        "precio": 4900
     },
     {
         "nombre": "METFORMINA CLORHIDRATO 850MG X250 TABLETAS",
