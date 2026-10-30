@@ -405,7 +405,7 @@ const productos = [
     {
         "nombre": "EARLY TEST PRUEBAS DE EMBARAZO",
         "archivoBase": "EARLY_TEST_PRUEBAS_DE_EMBARAZO",
-        "precio": 18000
+        "precio": 1800
     },
     {
         "nombre": "ENAT 400 VITAMINA E",
